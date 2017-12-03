@@ -2453,28 +2453,18 @@ img {
 
 .bookmark {
     position: fixed;
-    transform: scale(0);
+    transform: scale(.2);
     right: 0;
     left: -30px;
+    transition: all 1s cubic-bezier(0.680, -0.550, 0.265, 1.550);
     opacity: 0;
 }
 
-@keyframes example {
-    from {
-        opacity: 0;
-        transform: scale(0.2);
-    }
-    to {
-        opacity: 1;
-        transform: scale(0.3);
-    }
-}
-
-.showBookmark {
-    animation-name: example;
-    animation-duration: 1.0s;
+.showBookmark{
+    opacity: 1;
+    transform: scale(.3);
 }
 
 .bookmarked {
-    background-color: rgba(62, 213, 0, 1.4);
+    background-color: rgba(23, 179, 88, 1);
 }
