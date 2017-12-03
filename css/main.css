@@ -273,7 +273,7 @@ html {
 body {
     margin: 0;
     min-height: 100%;
-    background-color: #fff;
+    background-color: var(--background);
     font-family: Arial, sans-serif;
     font-size: 14px;
     line-height: 20px;
@@ -1814,7 +1814,7 @@ textarea.w-input, textarea.w-select {
    Start of custom Webflow CSS
    ========================================================================== */
 body {
-    background-color: #222;
+    background-color: var(--background);
     font-family: 'Open Sans', sans-serif;
     color: #fff;
     font-size: 14px;
@@ -2487,4 +2487,12 @@ img {
     --gradient: linear-gradient(180deg, rgba(139, 127, 127, 0) 48%, #fff 72%);
     --background: #fff;
     --border: #fff;
+
+    /*--primary: #fff;*/
+    /*--secondary: #b4b4b4;*/
+    /*--triadic: #e3a034;*/
+    /*--tetradic: rgb(111, 112, 213);*/
+    /*--gradient: linear-gradient(180deg, rgba(139, 127, 127, 0) 48%, rgb(111, 112, 213) 72%);*/
+    /*--background: #fff;*/
+    /*--border: #fff;*/
 }
