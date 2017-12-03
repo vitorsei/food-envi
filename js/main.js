@@ -1,8 +1,14 @@
+var bookmarked = false;
+var isScrolling;
+
 $(document).ready(function () {
   loadDetails();
   $("#circle0").addClass("selected");
 
-  $(".carousel").scroll(function () {
+  var carousel = $('.carousel');
+
+
+  carousel.scroll(function () {
     const width = $("#img1").width();
     const scroll = $("#img1").offset().left * -1;
 
@@ -11,28 +17,45 @@ $(document).ready(function () {
 
     $(".circle").removeClass("selected");
     $(selector).addClass("selected");
+
+    // Clear our timeout throughout the scroll
+    window.clearTimeout( isScrolling );
+
+    // Set a timeout to run after scrolling ends
+    isScrolling = setTimeout(function() {
+      // Run the callback
+      carousel.scrollLeft( index * width );
+    }, 66);
+
   });
 
-  var bookmarked = false;
-
-  $(".carousel").click(function () {
-    if (!bookmarked) {
-      bookmarked = true;
-      $("#bookmark").addClass('showBookmark');
-      $("#bookmarkIcon").addClass("bookmarked");
-      setTimeout(function () {
-        $("#bookmark").removeClass('showBookmark');
-      }, 1200);
-    }
+  carousel.click(function () {
+    bookmark();
   });
 
   $("#bookmarkIcon").click(function (e) {
+    e.stopPropagation();
+    bookmark();
+  });
+});
+
+function bookmark() {
+  if (bookmarked) {
     $("#bookmarkIcon").removeClass('bookmarked');
     bookmarked = !bookmarked;
-    e.stopPropagation();
-  });
+  } else {
+    bookmarked = true;
+    $("#bookmark").addClass('showBookmark');
+    $("#bookmarkIcon").addClass("bookmarked");
+    setTimeout(function () {
+      $("#bookmark").removeClass('showBookmark');
+    }, 1200);
+  }
+}
 
-});
+function indicator(scroll, width) {
+  return Math.round(scroll / width);
+}
 
 
 function loadDetails() {
@@ -61,6 +84,4 @@ function loadDetails() {
   $("#allergy4").text("dairy free");
 }
 
-function indicator(scroll, width) {
-  return Math.round(scroll / width);
-}
+

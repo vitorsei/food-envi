@@ -2472,21 +2472,21 @@ img {
 }
 
 :root {
-    /*--primary: #fff;*/
-    /*--secondary: #b4b4b4;*/
-    /*--triadic: #e3a034;*/
-    /*--tetradic: rgba(23, 179, 88, 1);*/
-    /*--gradient: linear-gradient(180deg, rgba(0, 0, 0, .37) 50%, #222 79%);;*/
-    /*--background: #222;*/
-    /*--border: #fff;*/
-
-    --primary: #222;
-    --secondary: #222;
-    --triadic: rgb(111, 112, 213);
-    --tetradic: rgb(111, 112, 213);
-    --gradient: linear-gradient(180deg, rgba(139, 127, 127, 0) 48%, #fff 72%);
-    --background: #fff;
+    --primary: #fff;
+    --secondary: #b4b4b4;
+    --triadic: #e3a034;
+    --tetradic: rgba(23, 179, 88, 1);
+    --gradient: linear-gradient(180deg, rgba(0, 0, 0, .37) 50%, #222 79%);;
+    --background: #222;
     --border: #fff;
+
+    /*--primary: #222;*/
+    /*--secondary: #222;*/
+    /*--triadic: rgb(111, 112, 213);*/
+    /*--tetradic: rgb(111, 112, 213);*/
+    /*--gradient: linear-gradient(180deg, rgba(139, 127, 127, 0) 48%, #fff 72%);*/
+    /*--background: #fff;*/
+    /*--border: #fff;*/
 
     /*--primary: #fff;*/
     /*--secondary: #b4b4b4;*/
