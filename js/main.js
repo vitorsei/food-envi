@@ -36,13 +36,24 @@ $(document).ready(function () {
     $(selector).addClass("selected");
   });
 
+  var bookmarked = false;
+
   $(".carousel").click(function () {
-    $("#bookmark").addClass('showBookmark');
-    $("#bookmarkIcon").addClass("bookmarked");
-    setTimeout(function () {
-      $("#bookmark").removeClass('showBookmark');
-    }, 1500);
+    if (!bookmarked) {
+      bookmarked = true;
+      $("#bookmark").addClass('showBookmark');
+      $("#bookmarkIcon").addClass("bookmarked");
+      setTimeout(function () {
+        $("#bookmark").removeClass('showBookmark');
+      }, 1200);
+    }
   });
+
+  $("#bookmarkIcon").click(function () {
+    $("#bookmarkIcon").removeClass('bookmarked');
+    bookmarked = !bookmarked;
+  });
+
 });
 
 function indicator(scroll, width) {

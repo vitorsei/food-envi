@@ -2382,6 +2382,7 @@ img {
     border: 1px solid #fff;
     border-radius: 50%;
     background-color: rgba(0, 0, 0, .4);
+    user-select: none;
 }
 
 .circle.mini {
@@ -2453,16 +2454,16 @@ img {
 
 .bookmark {
     position: fixed;
-    transform: scale(.2);
+    transform: scale(.1);
     right: 0;
     left: -30px;
-    transition: all 1s cubic-bezier(0.680, -0.550, 0.265, 1.550);
+    transition: all 0.8s cubic-bezier(0.680, -0.550, 0.265, 1.550);
     opacity: 0;
 }
 
 .showBookmark{
     opacity: 1;
-    transform: scale(.3);
+    transform: scale(.2);
 }
 
 .bookmarked {
