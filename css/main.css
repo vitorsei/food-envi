@@ -4,8 +4,7 @@
 
 .main {
     display: inline-block;
-    background: linear-gradient(180deg, rgba(0, 0, 0, .37) 50%, #222 79%);
-
+    background: var(--gradient);
 }
 
 .carousel {
@@ -2346,12 +2345,12 @@ img {
 }
 
 .infotitle {
-    color: #e3a034;
+    color: var(--triadic);
 }
 
 .info {
     display: inline;
-    color: #b4b4b4;
+    color: var(--secondary);
 }
 
 .bottom {
@@ -2366,7 +2365,7 @@ img {
 
 .dishdescription {
     font-family: 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif;
-    color: #b4b4b4;
+    color: var(--secondary);
     font-weight: 400;
 }
 
@@ -2379,10 +2378,11 @@ img {
 .circle {
     width: 35px;
     height: 35px;
-    border: 1px solid #fff;
+    border: 1px solid var(--border);
     border-radius: 50%;
     background-color: rgba(0, 0, 0, .4);
     user-select: none;
+    transition: background-color 0.8s cubic-bezier(0.680, -0.550, 0.265, 1.550);
 }
 
 .circle.mini {
@@ -2441,6 +2441,7 @@ img {
 
 .dish {
     font-family: 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif;
+    color: var(--primary);
 }
 
 .column {
@@ -2467,5 +2468,23 @@ img {
 }
 
 .bookmarked {
-    background-color: rgba(23, 179, 88, 1);
+    background-color: var(--tetradic);
+}
+
+:root {
+    /*--primary: #fff;*/
+    /*--secondary: #b4b4b4;*/
+    /*--triadic: #e3a034;*/
+    /*--tetradic: rgba(23, 179, 88, 1);*/
+    /*--gradient: linear-gradient(180deg, rgba(0, 0, 0, .37) 50%, #222 79%);;*/
+    /*--background: #222;*/
+    /*--border: #fff;*/
+
+    --primary: #222;
+    --secondary: #222;
+    --triadic: rgb(111, 112, 213);
+    --tetradic: rgb(111, 112, 213);
+    --gradient: linear-gradient(180deg, rgba(139, 127, 127, 0) 48%, #fff 72%);
+    --background: #fff;
+    --border: #fff;
 }
