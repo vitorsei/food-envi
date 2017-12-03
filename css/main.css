@@ -2453,10 +2453,26 @@ img {
 
 .bookmark {
     position: fixed;
-    transform: scale(.3);
+    transform: scale(0);
     right: 0;
     left: -30px;
-    display: none;
+    opacity: 0;
+}
+
+@keyframes example {
+    from {
+        opacity: 0;
+        transform: scale(0.2);
+    }
+    to {
+        opacity: 1;
+        transform: scale(0.3);
+    }
+}
+
+.showBookmark {
+    animation-name: example;
+    animation-duration: 1.0s;
 }
 
 .bookmarked {

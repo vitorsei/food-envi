@@ -37,12 +37,11 @@ $(document).ready(function () {
   });
 
   $(".carousel").click(function () {
-    $("#bookmark").fadeIn(300, function () {
-      $("#bookmarkIcon").addClass("bookmarked");
-      setTimeout(function () {
-        $("#bookmark").fadeOut(300);
-      }, 1500);
-    });
+    $("#bookmark").addClass('showBookmark');
+    $("#bookmarkIcon").addClass("bookmarked");
+    setTimeout(function () {
+      $("#bookmark").removeClass('showBookmark');
+    }, 1500);
   });
 });
 
