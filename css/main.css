@@ -3,7 +3,7 @@
 }
 
 .main {
-    display:inline-block;
+    display: inline-block;
     background: linear-gradient(180deg, rgba(0, 0, 0, .37) 50%, #222 79%);
 
 }
@@ -22,13 +22,13 @@
 }
 
 .gradient {
-    position:relative;
-    z-index:-1;
-    display:block;
-    width:auto;
+    position: relative;
+    z-index: -1;
+    display: block;
+    width: auto;
     height: 90vh;
     object-fit: cover;
-    object-position:  64% 45%;
+    object-position: 64% 45%;
 }
 
 .division {
@@ -286,8 +286,6 @@ img {
     vertical-align: middle;
     display: inline-block
 }
-
-
 
 html.w-mod-touch * {
     background-attachment: scroll !important
@@ -2451,4 +2449,16 @@ img {
 
 .column-2 {
     padding-left: 0px;
+}
+
+.bookmark {
+    position: fixed;
+    transform: scale(.3);
+    right: 0;
+    left: -30px;
+    display: none;
+}
+
+.bookmarked {
+    background-color: rgba(62, 213, 0, 1.4);
 }

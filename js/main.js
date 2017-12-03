@@ -35,8 +35,17 @@ $(document).ready(function () {
     $(".circle").removeClass("selected");
     $(selector).addClass("selected");
   });
+
+  $(".carousel").click(function () {
+    $("#bookmark").fadeIn(300, function () {
+      $("#bookmarkIcon").addClass("bookmarked");
+      setTimeout(function () {
+        $("#bookmark").fadeOut(300);
+      }, 1500);
+    });
+  });
 });
 
 function indicator(scroll, width) {
-  return Math.round(scroll/width);
+  return Math.round(scroll / width);
 }
