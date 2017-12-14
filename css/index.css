@@ -1,9 +1,17 @@
+.header {
+    color: var(--triadic);
+    text-align: center;
+    padding: 5px;
+}
+
 .container {
     display: flex;
     justify-content: space-between;
-    background: linear-gradient(180deg, rgba(0, 0, 0, .37) 100%, #222 100%);
+    background: linear-gradient(360deg, rgba(0, 0, 0, .37) 69%, #222 100%);
     font-weight: 100;
     letter-spacing: .1rem;
+    position: relative;
+    margin-bottom: 5px;
 }
 
 .main_box {
@@ -34,6 +42,13 @@
     width: auto;
     object-fit: cover;
     object-position: 64% 45%;
+}
+
+.small_imageA {
+    padding-bottom: 1px;
+}
+
+.small_imageB {
 }
 
 .category {
@@ -2428,7 +2443,7 @@ img {
 :root {
     --primary: #fff;
     --secondary: #b4b4b4;
-    --triadic: #e3a034;
+    --triadic: rgb(204, 172, 79);
     --tetradic: rgba(23, 179, 88, 1);
     --gradient: linear-gradient(180deg, rgba(0, 0, 0, .37) 50%, #222 79%);;
     --background: #222;
