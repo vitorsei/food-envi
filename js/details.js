@@ -22,7 +22,6 @@ $(document).ready(function () {
     window.clearTimeout( isScrolling );
 
 
-
     // Set a timeout to run after scrolling ends
     isScrolling = setTimeout(function() {
       // carousel.scrollLeft( index * width );
@@ -31,7 +30,8 @@ $(document).ready(function () {
 
   });
 
-  carousel.click(function () {
+  $(".main").click(function (e) {
+    storeItem(e.currentTarget.firstElementChild.id);
     bookmark();
   });
 
@@ -40,6 +40,15 @@ $(document).ready(function () {
     bookmark();
   });
 });
+
+function storeItem(id) {
+  var storedItems = JSON.parse(localStorage.getItem("dishes"));
+  if (!storedItems) {
+    storedItems = [];
+  }
+  storedItems.push(id);
+  localStorage.setItem("dishes", JSON.stringify(storedItems));
+}
 
 function bookmark() {
   if (bookmarked) {
