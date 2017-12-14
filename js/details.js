@@ -21,11 +21,13 @@ $(document).ready(function () {
     // Clear our timeout throughout the scroll
     window.clearTimeout( isScrolling );
 
+
+
     // Set a timeout to run after scrolling ends
     isScrolling = setTimeout(function() {
-      // Run the callback
-      carousel.scrollLeft( index * width );
-    }, 66);
+      // carousel.scrollLeft( index * width );
+      carousel.animate( { scrollLeft: index * width }, 400);
+    }, 400);
 
   });
 
