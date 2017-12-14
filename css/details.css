@@ -2476,7 +2476,7 @@ img {
     --secondary: #b4b4b4;
     --triadic: #e3a034;
     --tetradic: rgba(23, 179, 88, 1);
-    --gradient: linear-gradient(180deg, rgba(0, 0, 0, .37) 50%, #222 79%);;
+    --gradient: linear-gradient(180deg, rgba(0, 0, 0, .37) 50%, #222 79%);
     --background: #222;
     --border: #fff;
 
