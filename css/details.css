@@ -128,6 +128,7 @@
 
 .rowTop {
     min-height: 83px;
+    position: relative;
 }
 
 .dish {
@@ -154,11 +155,18 @@
 
 .showBookmark{
     opacity: 1;
-    transform: scale(.2);
+    transform: scale(.8);
 }
 
 .bookmarked {
     background-color: var(--tetradic);
+}
+
+.like {
+    transform: scale(.1);
+    position: absolute;
+    top: -123px;
+    right: -150px;
 }
 
 
