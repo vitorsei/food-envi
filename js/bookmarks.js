@@ -19,25 +19,16 @@ function swiperighttHandler(event) {
 }
 
 function loadDetails() {
+  var array = [];
+  array.push(0);
+  localStorage.setItem("dishes", JSON.stringify(array));
 
-  $("#bigImage1").attr("src", "./img/fried-rice.PNG");
-  $("#smallImageA1").attr("src", "./img/stir-fry.PNG");
-  $("#smallImageB1").attr("src", "./img/crispy-soft.PNG");
-  $("#category1").text("RICE & NOODLES");
-  $("#photosLabel1").text("4 dishes");
-
-
-  $("#bigImage2").attr("src", "./img/stir-fry.PNG");
-  $("#smallImageA2").attr("src", "./img/pad-thai.PNG");
-  $("#smallImageB2").attr("src", "./img/fried-rice.PNG");
-  $("#category2").text("GREEN STUFF");
-  $("#photosLabel2").text("3 dishes");
-
-  $("#bigImage3").attr("src", "./img/pad-thai.PNG");
-  $("#smallImageA3").attr("src", "./img/crispy-soft.PNG");
-  $("#smallImageB3").attr("src", "./img/stir-fry.PNG");
-  $("#category3").text("CURRIES");
-  $("#photosLabel3").text("3 dishes");
+  var storedItems = JSON.parse(localStorage.getItem("dishes"));
+  if (storedItems) {
+    for (var i = 0; i < storedItems.length; i++) {
+      $("#" + i).attr("src", "./img/" + dishesMap[0].img);
+    }
+  }
 }
 
 

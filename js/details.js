@@ -2,6 +2,7 @@ var bookmarked = false;
 var isScrolling;
 
 $(document).ready(function () {
+  localStorage.clear();
   loadDetails();
   $("#circle0").addClass("selected");
 
@@ -9,8 +10,8 @@ $(document).ready(function () {
 
 
   carousel.scroll(function () {
-    const width = $("#img1").width();
-    const scroll = $("#img1").offset().left * -1;
+    const width = $("#0").width();
+    const scroll = $("#0").offset().left * -1;
 
     const index = indicator(scroll, width);
     const selector = '#circle' + index;
@@ -25,13 +26,13 @@ $(document).ready(function () {
     // Set a timeout to run after scrolling ends
     isScrolling = setTimeout(function() {
       // carousel.scrollLeft( index * width );
-      carousel.animate( { scrollLeft: index * width }, 400);
-    }, 400);
+      carousel.animate( { scrollLeft: index * width }, 350);
+    }, 350);
 
   });
 
   $(".main").click(function (e) {
-    storeItem(e.currentTarget.firstElementChild.id);
+    storeItem(Number(e.currentTarget.firstElementChild.id));
     bookmark();
   });
 
@@ -46,8 +47,10 @@ function storeItem(id) {
   if (!storedItems) {
     storedItems = [];
   }
-  storedItems.push(id);
-  localStorage.setItem("dishes", JSON.stringify(storedItems));
+  if (storedItems.indexOf(id) === -1) {
+    storedItems.push(id);
+    localStorage.setItem("dishes", JSON.stringify(storedItems));
+  }
 }
 
 function bookmark() {
@@ -70,29 +73,30 @@ function indicator(scroll, width) {
 
 
 function loadDetails() {
-  $("#img1").attr("src", "./img/fried-rice.PNG");
-  $("#dishName1").text("PINEAPPLE & EGG FRIED RICE");
-  $("#description1").text("spiced shredded chicken, cashew, mint & chilli");
-  $("#price1").text("$25.5");
-  $("#allergy1").text("dairy & gluten free");
 
-  $("#img2").attr("src", "./img/stir-fry.PNG");
-  $("#dishName2").text("STIR FRY OF BUG TAIL & CHOPPED PRAWN");
-  $("#description2").text("egg noodle & hellfire chilli oil");
-  $("#price2").text("$28.5");
-  $("#allergy2").text("dairy free");
+  $("#0").attr("src", "./img/" + dishesMap[0].img);
+  $("#dishName0").text(dishesMap[0].name);
+  $("#description0").text(dishesMap[0].description);
+  $("#price0").text(dishesMap[0].price);
+  $("#allergy0").text(dishesMap[0].allergy);
 
-  $("#img3").attr("src", "./img/pad-thai.PNG");
-  $("#dishName3").text("PAD THAI NOODLES");
-  $("#description3").text("dried shrimp & bean sprouts");
-  $("#price3").text("$25.5");
-  $("#allergy3").text("dairy free");
+  $("#1").attr("src", "./img/" + dishesMap[1].img);
+  $("#dishName1").text(dishesMap[1].name);
+  $("#description1").text(dishesMap[1].description);
+  $("#price1").text(dishesMap[1].price);
+  $("#allergy1").text(dishesMap[1].allergy);
 
-  $("#img4").attr("src", "./img/crispy-soft.PNG");
-  $("#dishName4").text("CRISPY SOFT SHELL CRAB");
-  $("#description4").text("green curry fried rice, thai basil");
-  $("#price4").text("$26.5");
-  $("#allergy4").text("dairy free");
+  $("#2").attr("src", "./img/" + dishesMap[2].img);
+  $("#dishName2").text(dishesMap[2].name);
+  $("#description2").text(dishesMap[2].description);
+  $("#price2").text(dishesMap[2].price);
+  $("#allergy2").text(dishesMap[2].allergy);
+
+  $("#3").attr("src", "./img/" + dishesMap[3].img);
+  $("#dishName3").text(dishesMap[3].name);
+  $("#description3").text(dishesMap[3].description);
+  $("#price3").text(dishesMap[3].price);
+  $("#allergy3").text(dishesMap[3].allergy);
 }
 
 
