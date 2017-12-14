@@ -1,21 +1,24 @@
 $(document).ready(function () {
   loadDetails();
 
-  $("#container1").click(function () {
-    window.location.href = 'details.html';
-  });
+  $(".container")
+    .on("swipeleft", swipeleftHandler)
+    .on("swiperight", swiperighttHandler);
 
-  $("#container2").click(function () {
-    window.location.href = 'details.html';
-  });
-
-  $("#container3").click(function () {
-    window.location.href = 'details.html';
-  });
 });
 
+function swipeleftHandler(event) {
+  $(event.currentTarget.firstElementChild).addClass("hide");
+}
+
+function swiperighttHandler(event) {
+  $(event.currentTarget.firstElementChild).addClass("hide");
+  // setTimeout(function () {
+  //   $(event.currentTarget.firstElementChild).addClass("hide");
+  // }, 500)
+}
+
 function loadDetails() {
-  $("#header").text("CHIN CHIN");
 
   $("#bigImage1").attr("src", "./img/fried-rice.PNG");
   $("#smallImageA1").attr("src", "./img/stir-fry.PNG");

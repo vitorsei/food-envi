@@ -1,0 +1,57 @@
+.header {
+    color: var(--triadic);
+    text-align: center;
+    padding: 5px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(360deg, rgba(0, 0, 0, .37) 69%, #222 100%);
+    font-weight: 100;
+    letter-spacing: .1rem;
+    position: relative;
+    margin-bottom: 5px;
+    transition: all .5s ease-in-out;
+}
+
+.big_image {
+    position: relative;
+    z-index: -1;
+    display: block;
+    height: 30vh;
+    width: 100%;
+    object-fit: cover;
+    object-position: 64% 45%;
+    transition: all .5s ease-in-out;
+}
+
+.category {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.photos_label {
+    color: var(--triadic);
+    font-size: 12px;
+}
+
+.swipe_left {
+    transition: all 1.0s;
+    transform: translateX(-100%);
+}
+
+.swipe_right {
+    transition: all 1.0s;
+    transform: translateX(100%);
+}
+
+.hide {
+    height: 0;
+    transform: scale(0);
+}
+
+.ui-loader {
+    display: none;
+}
