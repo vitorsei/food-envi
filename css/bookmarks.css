@@ -1,11 +1,11 @@
 .header {
     color: var(--triadic);
     text-align: center;
-    padding: 5px;
+    padding: 10px;
 }
 
 .container {
-    display: flex;
+    display: none;
     flex-direction: column;
     background: linear-gradient(360deg, rgba(0, 0, 0, .37) 69%, #222 100%);
     font-weight: 100;
@@ -13,6 +13,10 @@
     position: relative;
     margin-bottom: 5px;
     transition: all .5s ease-in-out;
+}
+
+.visible {
+    display: flex;
 }
 
 .big_image {

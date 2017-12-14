@@ -5,6 +5,10 @@ $(document).ready(function () {
     .on("swipeleft", swipeleftHandler)
     .on("swiperight", swiperighttHandler);
 
+  $("#header").click(function () {
+    window.location.href = 'index.html';
+  });
+
 });
 
 function swipeleftHandler(event) {
@@ -19,15 +23,16 @@ function swiperighttHandler(event) {
 }
 
 function loadDetails() {
-  var array = [];
-  array.push(0);
-  localStorage.setItem("dishes", JSON.stringify(array));
+  // var array = [];
+  // array.push(0);
+  // localStorage.setItem("dishes", JSON.stringify(array));
 
   var storedItems = JSON.parse(localStorage.getItem("dishes"));
   if (storedItems) {
-    for (var i = 0; i < storedItems.length; i++) {
-      $("#" + i).attr("src", "./img/" + dishesMap[0].img);
-    }
+    storedItems.forEach(function (t) {
+      $("#" + dishesMap[t].id).attr("src", "./img/" + dishesMap[t].img);
+      $("#container" + dishesMap[t].id).addClass("visible");
+    });
   }
 }
 

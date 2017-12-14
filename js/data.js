@@ -9,10 +9,10 @@ var dishesMap = [
   },
   {
     id: '1',
-    img: 'stir-fry.PNG',
-    name: 'STIR FRY OF BUG TAIL & CHOPPED PRAWN',
-    description: 'egg noodle & hellfire chilli oil',
-    price: '$28.5',
+    img: 'pad-thai.PNG',
+    name: 'PAD THAI NOODLES',
+    description: 'dried shrimp & bean sprouts',
+    price: '$25.5',
     allergy: 'diary free'
   },
   {

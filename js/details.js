@@ -20,13 +20,13 @@ $(document).ready(function () {
     $(selector).addClass("selected");
 
     // Clear our timeout throughout the scroll
-    window.clearTimeout( isScrolling );
+    window.clearTimeout(isScrolling);
 
 
     // Set a timeout to run after scrolling ends
-    isScrolling = setTimeout(function() {
+    isScrolling = setTimeout(function () {
       // carousel.scrollLeft( index * width );
-      carousel.animate( { scrollLeft: index * width }, 350);
+      carousel.animate({scrollLeft: index * width}, 350);
     }, 350);
 
   });
@@ -37,8 +37,9 @@ $(document).ready(function () {
   });
 
   $("#bookmarkIcon").click(function (e) {
-    e.stopPropagation();
-    bookmark();
+    window.location.href = 'bookmarks.html';
+    // e.stopPropagation();
+    // bookmark();
   });
 });
 
@@ -54,17 +55,23 @@ function storeItem(id) {
 }
 
 function bookmark() {
-  if (bookmarked) {
-    $("#bookmarkIcon").removeClass('bookmarked');
-    bookmarked = !bookmarked;
-  } else {
-    bookmarked = true;
-    $("#bookmark").addClass('showBookmark');
-    $("#bookmarkIcon").addClass("bookmarked");
-    setTimeout(function () {
-      $("#bookmark").removeClass('showBookmark');
-    }, 1200);
-  }
+  bookmarked = true;
+  $("#bookmark").addClass('showBookmark');
+  setTimeout(function () {
+    $("#bookmark").removeClass('showBookmark');
+  }, 1200);
+
+  // if (bookmarked) {
+  //   // $("#bookmarkIcon").removeClass('bookmarked');
+  //   bookmarked = !bookmarked;
+  // } else {
+  //   bookmarked = true;
+  //   $("#bookmark").addClass('showBookmark');
+  //   // $("#bookmarkIcon").addClass("bookmarked");
+  //   setTimeout(function () {
+  //     $("#bookmark").removeClass('showBookmark');
+  //   }, 1200);
+  // }
 }
 
 function indicator(scroll, width) {
