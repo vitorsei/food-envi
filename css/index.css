@@ -60,6 +60,7 @@
 .photos_label {
     color: var(--triadic);
     font-size: 12px;
+    font-weight: 600;
 }
 
 
@@ -1852,7 +1853,6 @@ body {
 h1 {
     margin-top: 0px;
     margin-bottom: 10px;
-    font-family: Lato, sans-serif;
     font-size: 38px;
     line-height: 44px;
     font-weight: 700;
@@ -1861,7 +1861,6 @@ h1 {
 h2 {
     margin-top: 20px;
     margin-bottom: 10px;
-    font-family: Lato, sans-serif;
     font-size: 32px;
     line-height: 36px;
     font-weight: 700;
@@ -1870,7 +1869,6 @@ h2 {
 h3 {
     margin-top: 20px;
     margin-bottom: 10px;
-    font-family: Lato, sans-serif;
     font-size: 24px;
     line-height: 30px;
     font-weight: 700;
@@ -1879,16 +1877,15 @@ h3 {
 h4 {
     margin-top: 10px;
     margin-bottom: 10px;
-    font-family: Lato, sans-serif;
     font-size: 18px;
     line-height: 24px;
-    font-weight: 700;
+    font-weight: 100;
 }
 
 h5 {
     margin-top: 10px;
     margin-bottom: 10px;
-    font-family: Lato, sans-serif;
+    
     font-size: 14px;
     line-height: 20px;
     font-weight: 700;
@@ -1897,7 +1894,7 @@ h5 {
 h6 {
     margin-top: 10px;
     margin-bottom: 10px;
-    font-family: Lato, sans-serif;
+    
     font-size: 12px;
     line-height: 18px;
     font-weight: 700;
@@ -1907,7 +1904,7 @@ h6 {
 p {
     display: block;
     margin-bottom: 16px;
-    font-family: Lato, sans-serif;
+    
     color: #fff;
     line-height: 24px;
     font-weight: 300;
@@ -1969,7 +1966,7 @@ img {
 .nav-link {
     -webkit-transition: color 200ms ease;
     transition: color 200ms ease;
-    font-family: Lato, sans-serif;
+    
     color: #999;
     font-size: 11px;
     line-height: 17px;
@@ -1988,7 +1985,7 @@ img {
 
 .logo {
     padding: 15px;
-    font-family: Lato, sans-serif;
+    
     color: #fff;
     font-size: 24px;
     line-height: 30px;
@@ -2015,7 +2012,7 @@ img {
     background-color: transparent;
     -webkit-transition: all 200ms ease;
     transition: all 200ms ease;
-    font-family: Lato, sans-serif;
+    
     color: #00d6b4;
     font-size: 13px;
     line-height: 19px;
@@ -2154,7 +2151,7 @@ img {
 
 .footer-logo {
     margin-bottom: 10px;
-    font-family: Lato, sans-serif;
+    
     color: #c2c2c2;
     font-size: 19px;
     line-height: 22px;
@@ -2177,7 +2174,7 @@ img {
 }
 
 .field {
-    font-family: Lato, sans-serif;
+    
     font-size: 12px;
     font-weight: 300;
     letter-spacing: 1px;
@@ -2233,7 +2230,7 @@ img {
 }
 
 .super-heading {
-    font-family: Lato, sans-serif;
+    
     color: hsla(0, 0%, 100%, .36);
     text-transform: uppercase;
 }
@@ -2376,40 +2373,6 @@ img {
     padding-right: 30px;
     padding-bottom: 30px;
     padding-left: 30px;
-}
-
-.dishdescription {
-    font-family: 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif;
-    color: var(--secondary);
-    font-weight: 400;
-}
-
-.container-2 {
-    display: block;
-    height: 50px;
-    border: 1px solid #fff;
-}
-
-.circle {
-    width: 35px;
-    height: 35px;
-    border: 1px solid var(--border);
-    border-radius: 50%;
-    background-color: rgba(0, 0, 0, .4);
-    user-select: none;
-    transition: background-color 0.8s cubic-bezier(0.680, -0.550, 0.265, 1.550);
-}
-
-.circle.mini {
-    width: 8px;
-    height: 8px;
-    margin-right: 4px;
-    margin-left: 4px;
-    background-color: transparent;
-}
-
-.circle.mini.selected {
-    background-color: #fff;
 }
 
 .navigation {

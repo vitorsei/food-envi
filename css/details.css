@@ -56,7 +56,6 @@
 }
 
 .dishdescription {
-    font-family: 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif;
     color: var(--secondary);
     font-weight: 400;
 }
@@ -132,7 +131,6 @@
 }
 
 .dish {
-    font-family: 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif;
     color: var(--primary);
 }
 
