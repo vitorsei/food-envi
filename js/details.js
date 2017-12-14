@@ -60,6 +60,8 @@ function bookmark() {
   setTimeout(function () {
     $("#bookmark").removeClass('showBookmark');
   }, 1200);
+  $('#like1').css({ fill: "#ff0000" });
+
 
   // if (bookmarked) {
   //   // $("#bookmarkIcon").removeClass('bookmarked');

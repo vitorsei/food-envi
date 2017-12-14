@@ -163,10 +163,10 @@
 }
 
 .like {
-    transform: scale(.1);
+    transform: scale(.06);
     position: absolute;
-    top: -123px;
-    right: -150px;
+    top: -230px;
+    right: -259px;
 }
 
 
