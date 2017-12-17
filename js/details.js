@@ -1,5 +1,7 @@
-var isScrolling;
-var storedItems = JSON.parse(localStorage.getItem("dishes")) || [];
+let isScrolling;
+let storedItems = JSON.parse(localStorage.getItem("dishes")) || [];
+let urlParams;
+let section;
 
 $(document).ready(function () {
   loadDetails();
@@ -25,7 +27,7 @@ $(document).ready(function () {
     // Set a timeout to run after scrolling ends
     isScrolling = setTimeout(function () {
       // carousel.scrollLeft( index * width );
-      carousel.animate({ scrollLeft: index * width }, 350);
+      carousel.animate({scrollLeft: index * width}, 350);
     }, 350);
 
   });
@@ -33,7 +35,7 @@ $(document).ready(function () {
   $(".main").click(function (e) {
     var id = Number(e.currentTarget.firstElementChild.id);
 
-    var index = storedItems.indexOf(id);
+    const index = storedItems.findIndex(item => item.section === section && item.id === id);
     if (index === -1) {
       bookmark(id);
     } else {
@@ -51,18 +53,19 @@ $(document).ready(function () {
 function unbookmark(index, id) {
   storedItems.splice(index, 1);
   localStorage.setItem("dishes", JSON.stringify(storedItems));
-  $("#like" + id).css({ fill: "#b4b4b4" });
+  $("#like" + id).css({fill: "#b4b4b4"});
 }
 
 function bookmark(id) {
-  storedItems.push(id);
+  const storeItem = {id, section};
+  storedItems.push(storeItem);
   localStorage.setItem("dishes", JSON.stringify(storedItems));
 
   $("#bookmark").addClass('showBookmark');
   setTimeout(function () {
     $("#bookmark").removeClass('showBookmark');
   }, 1200);
-  $('#like' + id).css({ fill: "#ed4956" });
+  $('#like' + id).css({fill: "#ed4956"});
 }
 
 function indicator(scroll, width) {
@@ -71,9 +74,8 @@ function indicator(scroll, width) {
 
 
 function loadDetails() {
-
-  const urlParams = new URLSearchParams(window.location.search);
-  const section = urlParams.get('section');
+  urlParams = new URLSearchParams(window.location.search);
+  section = urlParams.get('section');
 
   const dishes = dishesMap.find(item => item.section === section).dishes;
   for (let i = 0; i < dishes.length; i++) {
