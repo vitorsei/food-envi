@@ -33,7 +33,7 @@ function loadDetails() {
   var storedItems = JSON.parse(localStorage.getItem("dishes"));
   if (storedItems) {
     storedItems.forEach(function (t) {
-      $("#" + dishesMap[t].id).attr("src", "./img/" + dishesMap[t].img);
+      $("#" + dishesMap[t].id).attr("src", dishesMap[t].img);
       $("#container" + dishesMap[t].id).addClass("visible");
     });
   }

@@ -2,15 +2,15 @@ $(document).ready(function () {
   loadDetails();
 
   $("#container1").click(function () {
-    window.location.href = 'details.html';
+    window.location.href = 'details.html?section=0';
   });
 
   $("#container2").click(function () {
-    window.location.href = 'details.html';
+    window.location.href = 'details.html?section=1';
   });
 
   $("#container3").click(function () {
-    window.location.href = 'details.html';
+    window.location.href = 'details.html?section=2';
   });
 });
 
