@@ -3,7 +3,7 @@ var dishesMap = [
     section: '0',
     dishes: [
       {
-        id: '0',
+        id: 0,
         img: './img/fried-rice.PNG',
         name: 'PINEAPPLE & EGG FRIED RICE',
         description: 'spiced shredded chicken, cashew, mint & chilli',
@@ -11,7 +11,7 @@ var dishesMap = [
         allergy: 'diary & gluten free'
       },
       {
-        id: '1',
+        id: 1,
         img: './img/pad-thai.PNG',
         name: 'PAD THAI NOODLES',
         description: 'dried shrimp & bean sprouts',
@@ -19,7 +19,7 @@ var dishesMap = [
         allergy: 'diary free'
       },
       {
-        id: '2',
+        id: 2,
         img: './img/stir-fry.PNG',
         name: 'STIR FRY OF BUG TAIL & CHOPPED PRAWN',
         description: 'egg noodle & hellfire chilli oil',
@@ -27,7 +27,7 @@ var dishesMap = [
         allergy: 'diary free'
       },
       {
-        id: '3',
+        id: 3,
         img: './img/crispy-soft.PNG',
         name: 'CRISPY SOFT SHELL CRAB',
         description: 'green curry fried rice, thai basil',
