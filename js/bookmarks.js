@@ -1,9 +1,11 @@
+var storedItems = JSON.parse(localStorage.getItem("dishes")) || [];
+
 $(document).ready(function () {
   loadDetails();
 
   $(".container")
-    .on("swipeleft", swipeleftHandler)
-    .on("swiperight", swiperighttHandler);
+    .on("swipeleft", swipeHandler)
+    .on("swiperight", swipeHandler);
 
   $("#header").click(function () {
     window.location.href = 'index.html';
@@ -11,15 +13,16 @@ $(document).ready(function () {
 
 });
 
-function swipeleftHandler(event) {
-  $(event.currentTarget.firstElementChild).addClass("hide");
+function swipeHandler(e) {
+  $(e.currentTarget.firstElementChild).addClass("hide");
+  var id = Number(e.currentTarget.firstElementChild.id);
+  var index = storedItems.indexOf(id);
+  unbookmark(index, id);
 }
 
-function swiperighttHandler(event) {
-  $(event.currentTarget.firstElementChild).addClass("hide");
-  // setTimeout(function () {
-  //   $(event.currentTarget.firstElementChild).addClass("hide");
-  // }, 500)
+function unbookmark(index, id) {
+  storedItems.splice(index, 1);
+  localStorage.setItem("dishes", JSON.stringify(storedItems));
 }
 
 function loadDetails() {

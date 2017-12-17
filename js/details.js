@@ -1,8 +1,7 @@
-var bookmarked = false;
 var isScrolling;
+var storedItems = JSON.parse(localStorage.getItem("dishes")) || [];
 
 $(document).ready(function () {
-  localStorage.clear();
   loadDetails();
   $("#circle0").addClass("selected");
 
@@ -26,14 +25,20 @@ $(document).ready(function () {
     // Set a timeout to run after scrolling ends
     isScrolling = setTimeout(function () {
       // carousel.scrollLeft( index * width );
-      carousel.animate({scrollLeft: index * width}, 350);
+      carousel.animate({ scrollLeft: index * width }, 350);
     }, 350);
 
   });
 
   $(".main").click(function (e) {
-    storeItem(Number(e.currentTarget.firstElementChild.id));
-    bookmark();
+    var id = Number(e.currentTarget.firstElementChild.id);
+
+    var index = storedItems.indexOf(id);
+    if (index === -1) {
+      bookmark(id);
+    } else {
+      unbookmark(index, id);
+    }
   });
 
   $("#bookmarkIcon").click(function (e) {
@@ -43,37 +48,21 @@ $(document).ready(function () {
   });
 });
 
-function storeItem(id) {
-  var storedItems = JSON.parse(localStorage.getItem("dishes"));
-  if (!storedItems) {
-    storedItems = [];
-  }
-  if (storedItems.indexOf(id) === -1) {
-    storedItems.push(id);
-    localStorage.setItem("dishes", JSON.stringify(storedItems));
-  }
+function unbookmark(index, id) {
+  storedItems.splice(index, 1);
+  localStorage.setItem("dishes", JSON.stringify(storedItems));
+  $("#like" + id).css({ fill: "#b4b4b4" });
 }
 
-function bookmark() {
-  bookmarked = true;
+function bookmark(id) {
+  storedItems.push(id);
+  localStorage.setItem("dishes", JSON.stringify(storedItems));
+
   $("#bookmark").addClass('showBookmark');
   setTimeout(function () {
     $("#bookmark").removeClass('showBookmark');
   }, 1200);
-  $('#like1').css({ fill: "#ff0000" });
-
-
-  // if (bookmarked) {
-  //   // $("#bookmarkIcon").removeClass('bookmarked');
-  //   bookmarked = !bookmarked;
-  // } else {
-  //   bookmarked = true;
-  //   $("#bookmark").addClass('showBookmark');
-  //   // $("#bookmarkIcon").addClass("bookmarked");
-  //   setTimeout(function () {
-  //     $("#bookmark").removeClass('showBookmark');
-  //   }, 1200);
-  // }
+  $('#like' + id).css({ fill: "#ed4956" });
 }
 
 function indicator(scroll, width) {
