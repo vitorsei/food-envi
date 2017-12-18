@@ -5,7 +5,7 @@ var dishesMap = [
     dishes: [
       {
         id: 0,
-        img: './img/fried-rice.PNG',
+        img: 'http://res.cloudinary.com/dbsfkfmbd/image/upload/w_500/q_auto,f_auto/pad-thai_calsx4.png',
         name: 'PINEAPPLE & EGG FRIED RICE',
         description: 'spiced shredded chicken, cashew, mint & chilli',
         price: '$25.5',

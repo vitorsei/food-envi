@@ -75,7 +75,8 @@ function indicator(scroll, width) {
 
 function loadDetails() {
   urlParams = new URLSearchParams(window.location.search);
-  section = Number(urlParams.get('section'));
+  // section = Number(urlParams.get('section'));
+  section = 0;
 
   const dishes = dishesMap.find(item => item.section === section).dishes;
   for (let i = 0; i < dishes.length; i++) {
